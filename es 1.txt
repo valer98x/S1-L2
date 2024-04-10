@@ -1,0 +1,49 @@
+L'IP network tiene conto sia della parte "pubblica" del protocollo, che del valore oltre "/", che serve ad individiare i bit associati al network:
+● 1.1.1.1/8 
+● 128.1.6.5/12 
+● 200.1.2.3/24 
+● 192.192.1.1/22 
+● 126.5.4.3/9 
+● 200.1.9.8/24 
+● 172.16.0.4/16
+
+
+L'indirizzo Gateway "Convenzionale" rappresenta l'indirizzo subito successivo al primo indirizzo della rete, per cui avremo:
+
+● Nel primo caso,dove il network IP è 1.1.1.1/8 l'ottetto interessato è il primo, per cui il primo indirizzo IP della rete sarà 1.0.0.0.0/8, da cui il Gateway convenzionale sarà 1.0.0.1/8 
+● 128.1.6.5/12    avrà come Gateway 128.0.0.1/12
+● 200.1.2.3/24    avrà come Gateway 200.1.0.1/24
+● 192.192.1.1/22  avrà come gateway 192.192.0.1/22
+● 126.5.4.3/9      avrà come gateway 126.0.0.1/9
+● 200.1.9.8/24     avrà come gateway 200.1.0.1/24
+● 172.16.0.4/16    avrà come gateway  172.0.0.1/16
+
+
+
+La subnet mask si ricava dall'indirizzo gateway riportato in codice binario come cifre significative:
+
+●nel primo esercizio abbiamo una subnet mask di /8, che diventa 11111111.00000000.00000000.00000000. applicando la formula (2^0x1+2^1x1)... otteniamo 255.0.0.0
+
+
+●nel secondo esercizio la subnet mask è /12, cioè 11111111.11110000.0000.0000. sempre tramite la formula la formula (2^0x1+2^1x1)... otteniamo 255.240.0.0
+
+
+●Lo stesso procedimento si applica agli indirizzi successivi, così 200.1.2.3/24 diventa  255.255.255.0, 192.192.1.1/22 diventa 255.255.252.0 , 126.5.4.3/9 diventa 255.128.0.0 , 200.1.9.8/24 diventa  255.255.255.0,    ,172.16.0.4/16 diventa  255.255.255.0
+
+
+
+
+Da valori binari precedenti ricaviamo quanti Bit sono disponibili sia per il network che per gli host:
+
+● 1.1.1.1/8         Avremo 2^8 bit per il network e 2^24 bit per gli host
+● 128.1.6.5/12       avremo 2^12 bit per il network e 2^20 bit per gli host
+● 200.1.2.3/24       avremo 2^24 bit per il network e 2^8 bit per gli host
+● 192.192.1.1/22    avremo 2^22 bit per il network e 2^10 bit per gli host
+● 126.5.4.3/9       avremo 2^9 bit per il network e 2^23 bit per gli host
+● 200.1.9.8/24       avremo 2^24 bit per il network e 2^8 bit per gli host
+● 172.16.0.4/16      avremo 2^16 bit per il network e 2^16 bit per gli host
+
+
+
+
+
